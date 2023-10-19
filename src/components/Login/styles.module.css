@@ -1,0 +1,80 @@
+.Login{
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    text-align: center;
+    height: 100vh;
+}
+.Empty__page{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    text-align: center;
+    height: 100%;
+    width: 60%;
+    background-color: rgb(56, 55, 55);
+}
+.Login__page{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 40%;
+}
+.Login__form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    text-align: center;
+}
+.Login__form_main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    text-align: center;
+}
+.Login__Auth button{
+    margin: 10px;
+    width: 180px;
+    height: 40px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+}
+.Login__form input{
+    margin: 10px;
+    width: 300px;
+    height: 40px;
+    border: none;
+    font-size: 18px;
+    border-bottom: 1px solid rgb(71, 71, 71);
+    outline: none;
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 400;
+}
+.Login__form button{
+    margin-top: 20px;
+    width: 300px;
+    height: 40px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    background-color: rgb(71, 71, 71);
+    color: white;
+}
+.reset_password{
+    color: #010b41;
+    font-size: 1rem;
+    font-weight: 600;
+    font-family: 'Nunito Sans', sans-serif;
+    margin-top: 10px;
+}

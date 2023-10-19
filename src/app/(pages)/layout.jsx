@@ -1,0 +1,12 @@
+// import './globals.css'
+"use client"
+
+
+
+export default function RootLayout({ children }) {
+  return (
+    <>
+      {children}
+    </>
+  )
+}

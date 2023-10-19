@@ -1,0 +1,69 @@
+.Reset{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+.left_side{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 40%;
+    height: 100%;
+}
+.right_side{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 60%;
+    height: 100%;
+}
+.inside_text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 300px;
+}
+.right_side_h1{
+    font-size: 3rem;
+    font-weight: 800;
+    font-family: 'Nunito Sans', sans-serif;
+    color: #010b41;
+}
+.right_side_p{
+    font-size: 1rem;
+    font-weight: 600;
+    font-family: 'Nunito Sans', sans-serif;
+    color: #010b41;
+}
+.inside_text form{
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: center;
+    width: 300px;
+    margin: 10px 0px 10px 0px;
+}
+.inside_text form input{
+    margin: 10px 0px;
+    width: 300px;
+    height: 40px;
+    border: none;
+    font-size: 18px;
+    border-bottom: 1px solid rgb(71, 71, 71);
+    outline: none;
+    font-family: 'Nunito Sans', sans-serif;
+}
+.inside_text form button{
+    margin-top: 10px;
+    width: 300px;
+    height: 40px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    background-color: #010b41;
+    color: white;
+}

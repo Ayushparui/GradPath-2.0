@@ -1,0 +1,60 @@
+.nav{
+    height: 100%;
+    float: left;
+    position: relative;
+    display: flex;
+    width: 15%;
+    flex-direction: column;
+    align-self: start;
+    background-color: white;
+    border: 0.5px solid rgb(206, 206, 206);
+}
+.nav_main{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.nav__logo{
+    display: flex;
+    margin-top: 10px;
+    align-items: center;
+    justify-content: center;
+}
+.image{
+    display: inline;
+}
+.nav__links{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    margin-right: 40px;
+}
+.nav__links ul{
+    text-decoration: none;
+    list-style: none;
+}
+.nav__links ul li{
+    padding-top: 15px;
+}
+.nav__links ul li img{
+    padding-top: 10px;
+}
+.links{
+    text-decoration: none;
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    color: rgb(90, 90, 90);
+    text-decoration: none;
+    padding-left: 8px;
+    padding-bottom: 2px;
+}
+.nav__logout{
+    bottom: 15px;
+    left: 10px;
+    position: absolute
+
+}

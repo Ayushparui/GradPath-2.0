@@ -1,0 +1,18 @@
+.navlinks{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    margin-top: 10px;
+}
+.navlinks nav ul{
+    display: flex;
+    flex-direction: row;
+}
+.navlinks nav ul li{
+    text-decoration: none;
+    list-style: none;
+    padding-left: 15px;
+}
+.links{
+    text-decoration: none;
+}

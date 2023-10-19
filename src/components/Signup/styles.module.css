@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,300;6..12,400;6..12,600;6..12,700&display=swap');
+.Signup{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+.Login__link{
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    top: 20px;
+    display: flex;
+    position: absolute;
+    right: 20px;
+}
+
+.Signup__header{
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 700;
+}
+.Signup__header__p{
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 100;
+}
+.Signup__auth button{
+    margin: 10px;
+    width: 180px;
+    height: 40px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+}
+.Left__image{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    text-align: center;
+    height: 100%;
+    width: 50%;
+    background-color: rgb(71, 71, 71);
+}
+.Main__form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    text-align: center;
+    height: 100%;
+    width: 50%;
+}
+.between{
+    margin-top: -35px;
+    margin-bottom: 10px;
+}
+.Signup__container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    text-align: center;
+    height: 100%;
+    width: 100%;
+}
+.Signup__container input{
+    margin: 10px;
+    width: 300px;
+    height: 40px;
+    border: none;
+    font-size: 18px;
+    border-bottom: 1px solid rgb(71, 71, 71);
+    outline: none;
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 400;
+}
+.create__button{
+    margin-top: 20px;
+    width: 300px;
+    height: 40px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    background-color: rgb(71, 71, 71);
+    color: white;
+}
