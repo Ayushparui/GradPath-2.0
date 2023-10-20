@@ -7,16 +7,8 @@ client.setEndpoint(config.appwriteURL).setProject(config.appwriteProjectID);
 const storage = new Storage(client);
 const account = new Account(client);
 const database = new Databases(client);
-
-
-
-
+ 
 export class storageService{
-
-
-
-   
-
 
     async create(file){
 
@@ -38,21 +30,40 @@ export class storageService{
 
 
 
+
+        
+
+
         try {
             let id = uniqueString
 
-            const uml = await database.createDocument(
+            const listDoc = await database.listDocuments(config.appwriteDatabaseID, config.appwriteCollectionID)
+            const userId = (await account.get()).$id
+            const currDocument = listDoc.documents.filter(document => document.userId == userId);
+            const docId = currDocument.map(document => document.$id);
+            const latest = currDocument.sort((a,b) => new Date(b.$createdAt) - new Date(a.$createdAt));
+            const mostRecentProject = latest[0]
+            const recentProjectDocId = mostRecentProject.$id
+
+
+            console.log(mostRecentProject.name)
+            console.log(mostRecentProject.$id)
+            console.log(currDocument)
+            console.log(docId)
+
+
+            // adding UML to the database 
+            await database.updateDocument(
                 config.appwriteDatabaseID,
-                config.appwriteUMLCollectionID,
-                ID.unique(),
+                config.appwriteCollectionID,
+                recentProjectDocId,
                 {
-                    id: uniqueString
+                    UML_file_ID: uniqueString
                 }
-                
-            
+
             )
-            console.log(id)
-            
+
+
             const store = await storage.createFile(
                 config.appwriteBucketId,
                 uniqueString,

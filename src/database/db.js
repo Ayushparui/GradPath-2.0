@@ -25,6 +25,16 @@ export class database{
             return false
         }
     }
+
+    async listDocument(){
+        try{
+            const listDoc = await databases.listDocuments(config.appwriteDatabaseID, config.appwriteCollectionID)
+            const userId = (await account.get()).$id
+            console.log(listDoc.documents.filter(document => document.userId == userId));
+        }catch(error){
+            console.log(error)
+        }
+    }
 }
 
 const datab = new database()

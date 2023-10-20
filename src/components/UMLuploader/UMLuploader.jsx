@@ -2,6 +2,7 @@
 import { useState } from "react";
 import styles from "./styles.module.css"
 import store from "@/storage/storage";
+import datab from "@/database/db";
 
 const UMLuploader = () => {
     const [file, setFile] = useState(null);
@@ -44,6 +45,11 @@ const UMLuploader = () => {
         }
     }
 
+    const showDoc = async () => {
+        const show = await datab.listDocument();
+        console.log(show)
+    }
+
     return (
         <>
             <h1>UML uploader</h1>
@@ -58,6 +64,7 @@ const UMLuploader = () => {
                     <button type="submit" onClick={handleSubmit}>Upload</button>
                     <button type="delete" onClick={handleDelete}>Delete</button>
                 </form>
+                <button type="show" onClick={showDoc}>List doc</button>
             </main>
         </>
     );
