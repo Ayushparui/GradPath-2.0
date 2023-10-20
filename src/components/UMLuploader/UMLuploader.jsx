@@ -26,6 +26,7 @@ const UMLuploader = () => {
             const upload = await store.create(file)
             if(upload){
                 setFile(null);
+
             }
         } catch (error) {
             console.log(error)
@@ -36,12 +37,13 @@ const UMLuploader = () => {
     const handleDelete = (event) => {
         event.preventDefault();
         if (file) {
-            setFile(null);
+            
 
             const inputElement = document.querySelector('input[type="file"]');
             if (inputElement) {
                 inputElement.value = "";
             }
+            setFile(null);
         }
     }
 

@@ -1,11 +1,12 @@
 import Link from "next/link"
 import NavLinks from "@/components/NavLinks/NavLinks"
+import MyProject from "@/components/MyProject/MyProject"
 
 const MyProjects = () => {
     return(
         <>
             <NavLinks />
-            <h1>My Projects</h1>
+            <MyProject/>
         </>
     )
 }

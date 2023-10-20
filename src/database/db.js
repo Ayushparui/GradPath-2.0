@@ -30,11 +30,27 @@ export class database{
         try{
             const listDoc = await databases.listDocuments(config.appwriteDatabaseID, config.appwriteCollectionID)
             const userId = (await account.get()).$id
+            const userDocuments = listDoc.documents.filter(document => document.userId === userId);
             console.log(listDoc.documents.filter(document => document.userId == userId));
+            return userDocuments;
         }catch(error){
             console.log(error)
         }
     }
+
+    async deleteDocument(documentId){
+        try {
+            const deleteDoc = await databases.deleteDocument(config.appwriteDatabaseID, config.appwriteCollectionID, documentId)
+            if(deleteDoc){
+                console.log("Doc deleted from Database")
+            }
+            return true
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
+
 }
 
 const datab = new database()

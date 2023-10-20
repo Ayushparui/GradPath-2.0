@@ -33,7 +33,16 @@ const BuildProjects = () => {
                 value={projectData.name}
                 onChange={(e) => setProjectData((prev) => ({...prev, name: e.target.value}))}
                 required
-                />
+            />
+            <label htmlFor="name">Description</label>
+            <input 
+                type="text"
+                id="description"
+                placeholder="Enter Project description"
+                value={projectData.description}
+                onChange={(e) => setProjectData((prev) => ({...prev, description: e.target.value}))}
+                required
+            />
             
             <button type="submit">Submit</button>
         </form>

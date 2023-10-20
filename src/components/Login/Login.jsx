@@ -98,7 +98,7 @@ const Login = () => {
                 </div>
 
                 <div className={styles.Login__form}>
-                    <form onClick={login} className={styles.Login__form_main}>
+                    <form onSubmit={login} className={styles.Login__form_main}>
                         <p>or</p>
                         <label htmlFor="email">Email</label>
                         <input

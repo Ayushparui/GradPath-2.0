@@ -28,12 +28,6 @@ export class storageService{
         const uniqueString = generateUniqueString(10); // Change 10 to the desired length
         console.log(uniqueString);
 
-
-
-
-        
-
-
         try {
             let id = uniqueString
 
@@ -72,6 +66,22 @@ export class storageService{
             if(store){
                 console.log("storage workign successfully")
             }
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
+
+
+
+    async filePreview(umlId){
+        try {
+            const prev = storage.getFilePreview(config.appwriteBucketId, umlId);
+            if(prev){
+                console.log("Successfull Preview")
+            }
+            console.log(prev)
+            return prev
         } catch (error) {
             console.log(error)
         }
