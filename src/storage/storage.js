@@ -1,4 +1,4 @@
-import { Client, Databases, Account, ID, Storage } from "appwrite";
+import { Client, Databases, Account, ID, Storage, Query } from "appwrite";
 import config from "@/conf/config";
 
 const client = new Client();
@@ -74,9 +74,10 @@ export class storageService{
 
 
 
-    async filePreview(umlId){
+    async filePreview(){
+        
         try {
-            const prev = storage.getFilePreview(config.appwriteBucketId, umlId);
+            const prev = storage.listFiles(config.appwriteBucketId);
             if(prev){
                 console.log("Successfull Preview")
             }
@@ -84,6 +85,17 @@ export class storageService{
             return prev
         } catch (error) {
             console.log(error)
+        }
+    }
+
+
+    async getFilePreview(fileId){
+        try {
+            const get = storage.getFilePreview(config.appwriteBucketId, fileId)
+            console.log(get)
+            return get
+        } catch (error) {
+            console.log(error)            
         }
     }
 }
