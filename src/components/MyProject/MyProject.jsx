@@ -67,14 +67,14 @@ const MyProject = () => {
 
         useEffect(() => {
             getFilePreviews()
-        },[imgSrc])
+        },[umlFileIds])
 
     
 
    
     
 
-
+        console.log(imgSrc)
     
     
    

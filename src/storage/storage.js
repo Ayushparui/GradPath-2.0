@@ -74,19 +74,19 @@ export class storageService{
 
 
 
-    async filePreview(){
+    // async filePreview(){
         
-        try {
-            const prev = storage.listFiles(config.appwriteBucketId);
-            if(prev){
-                console.log("Successfull Preview")
-            }
-            console.log(prev)
-            return prev
-        } catch (error) {
-            console.log(error)
-        }
-    }
+    //     try {
+    //         const prev = storage.listFiles(config.appwriteBucketId);
+    //         if(prev){
+    //             console.log("Successfull Preview")
+    //         }
+    //         console.log(prev)
+    //         return prev
+    //     } catch (error) {
+    //         console.log(error)
+    //     }
+    // }
 
 
     async getFilePreview(fileId){
