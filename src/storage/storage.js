@@ -10,7 +10,7 @@ const database = new Databases(client);
  
 export class storageService{
 
-    async create(file){
+    async create(file, projectIndex){
 
             // Generate Unique character to store
         function generateUniqueString(length) {
@@ -26,7 +26,7 @@ export class storageService{
         
         // Usage
         const uniqueString = generateUniqueString(10); // Change 10 to the desired length
-        console.log(uniqueString);
+        // console.log(uniqueString);
 
         try {
             let id = uniqueString
@@ -34,23 +34,19 @@ export class storageService{
             const listDoc = await database.listDocuments(config.appwriteDatabaseID, config.appwriteCollectionID)
             const userId = (await account.get()).$id
             const currDocument = listDoc.documents.filter(document => document.userId == userId);
-            const docId = currDocument.map(document => document.$id);
-            const latest = currDocument.sort((a,b) => new Date(b.$createdAt) - new Date(a.$createdAt));
-            const mostRecentProject = latest[0]
-            const recentProjectDocId = mostRecentProject.$id
+            const recentProjectDocId = currDocument[projectIndex]
 
-
-            console.log(mostRecentProject.name)
-            console.log(mostRecentProject.$id)
-            console.log(currDocument)
-            console.log(docId)
+            console.log(userId)
+            console.log(currDocument[projectIndex])
+           console.log(projectIndex)
+           console.log(id)
 
 
             // adding UML to the database 
             await database.updateDocument(
                 config.appwriteDatabaseID,
                 config.appwriteCollectionID,
-                recentProjectDocId,
+                recentProjectDocId.$id,
                 {
                     UML_file_ID: uniqueString
                 }
@@ -65,34 +61,20 @@ export class storageService{
             );
             if(store){
                 console.log("storage workign successfully")
+            }else{
+                console.log("storage not working")
             }
+            return store
         } catch (error) {
             console.log(error)
         }
     }
 
 
-
-
-    // async filePreview(){
-        
-    //     try {
-    //         const prev = storage.listFiles(config.appwriteBucketId);
-    //         if(prev){
-    //             console.log("Successfull Preview")
-    //         }
-    //         console.log(prev)
-    //         return prev
-    //     } catch (error) {
-    //         console.log(error)
-    //     }
-    // }
-
-
     async getFilePreview(fileId){
         try {
             const get = storage.getFilePreview(config.appwriteBucketId, fileId)
-            console.log(get)
+            // console.log(get)
             return get
         } catch (error) {
             console.log(error)            

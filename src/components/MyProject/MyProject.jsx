@@ -34,15 +34,11 @@ const MyProject = () => {
     }
 
 
-
-    
     useEffect(() => {
         const umlFileIds = useData.map((element) => element.UML_file_ID);
         setUmlFileIds(umlFileIds);
     }, [useData]);
    
-   
-
    
 
         const getFilePreviews = async () => {
@@ -64,21 +60,11 @@ const MyProject = () => {
             }
         };
     
-
         useEffect(() => {
             getFilePreviews()
         },[umlFileIds])
 
-    
-
-   
-    
-
         console.log(imgSrc)
-    
-    
-   
-
 
     return(
         <>

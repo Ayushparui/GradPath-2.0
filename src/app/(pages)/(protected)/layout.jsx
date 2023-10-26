@@ -1,5 +1,4 @@
 "use client"
-
 import authServices from '@/authentication/auth'
 import { useState, useEffect } from 'react'
 import { AuthProvider } from '@/context/authContext'
@@ -7,8 +6,6 @@ import Nav from '@/components/Nav/Nav'
 import Header from '@/components/Header/Header'
 import NavLinks from '@/components/NavLinks/NavLinks'
 import styles from './styles.module.css'
-
-
 
 
 export default function ProtectedLayout({ children }) {
