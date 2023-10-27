@@ -51,6 +51,32 @@ export class database{
     }
 
 
+    // Store Code
+
+    async storeCode(link, projectIndex){
+        try {
+            const listDoc = await databases.listDocuments(config.appwriteDatabaseID, config.appwriteCollectionID)
+            const userId = (await account.get()).$id
+            const currDocument = listDoc.documents.filter(document => document.userId == userId);
+            const recentProjectDocId = currDocument[projectIndex]
+
+            await databases.updateDocument(
+                config.appwriteDatabaseID,
+                config.appwriteCollectionID,
+                recentProjectDocId.$id,
+                {
+                    Github_Link: link
+                }
+
+            )
+            return true
+        } catch (error) {
+            console.log(error)
+        }
+
+    }
+
+
 }
 
 const datab = new database()
