@@ -40,6 +40,12 @@ const CreateProjectModal = () => {
         setImgLinkModal(!imgLinkModal)
     }
 
+    const [deployLinkModal, setDeployLinkModal] = useState(false);
+    const toggleDeployLink = (index) => {
+        setProjectIndex(index)
+        setDeployLinkModal(!deployLinkModal)
+    }
+
     // For Project Creation
 
     const [projectData, setProjectData] = useState({
@@ -131,6 +137,22 @@ const CreateProjectModal = () => {
             } catch (error) {
                 console.log(error)
             }
+        }
+    }
+
+
+    // For Deploy Link
+    const [deployLink, setDeployLink] = useState("")
+    const submitDeployLink = async (index) => {
+        try {
+            const linkUpload = await datab.storeDeployLink(deployLink, index)
+            if (linkUpload) {
+                setDeployLink("")
+                setDeployLinkModal(!deployLinkModal)
+                fetchData()
+            }
+        } catch (error) {
+            console.log(error)
         }
     }
 
@@ -284,6 +306,25 @@ const CreateProjectModal = () => {
             
             )}
 
+            {/* Deployment Link Modal */}
+            {deployLinkModal && (
+                <div className={styles.modal}>
+                    <div className={styles.overlay} onClick={toggleDeployLink}></div>
+                    <div className={styles.modalContent}>
+                        <form className={styles.form}>
+                            <input
+                                type="text"
+                                id="deployLink"
+                                placeholder="Enter Deployment Link"
+                                value={deployLink}
+                                onChange={(e) => setDeployLink(e.target.value)}
+                            />
+                            <button type="button" onClick={() => submitDeployLink(projectIndex)}>Deploy Links</button>
+                        </form>
+                    </div>
+                </div>
+            )}
+
 
 
             {/* Data Add  */}
@@ -302,6 +343,7 @@ const CreateProjectModal = () => {
                             <button onClick={() => toggleUmlModal(index)}>Add Uml</button>
                             <button onClick={() => toggleCodeLink(index)}>Github/Code Link</button>
                             <button onClick={() => toggleImgLink(index)}>Images/Videos</button>
+                            <button onClick={() => toggleDeployLink(index)}>Deployment Link</button>
                         </div>
                     </div>
                 ))

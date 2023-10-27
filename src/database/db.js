@@ -76,6 +76,28 @@ export class database{
 
     }
 
+    async storeDeployLink(link, projectIndex){
+        try {
+            const listDoc = await databases.listDocuments(config.appwriteDatabaseID, config.appwriteCollectionID)
+            const userId = (await account.get()).$id
+            const currDocument = listDoc.documents.filter(document => document.userId == userId);
+            const recentProjectDocId = currDocument[projectIndex]
+
+            await databases.updateDocument(
+                config.appwriteDatabaseID,
+                config.appwriteCollectionID,
+                recentProjectDocId.$id,
+                {
+                    Deploy_Link: link
+                }
+
+            )
+            return true
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
 
 }
 
