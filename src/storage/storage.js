@@ -22,6 +22,58 @@ const database = new Databases(client);
  
 export class storageService{
 
+    // async uploadImgFile(file){
+    //     const uniqueString = generateUniqueString(10);
+
+    //     try {
+    //         let id = uniqueString
+
+    //         const listDoc = await database.listDocuments(config.appwriteDatabaseID, config.appwriteCollectionID)
+    //         const userId = (await account.get()).$id
+    //         const currDocument = listDoc.documents.filter(document => document.userId == userId);
+    //         const recentProjectDocId = currDocument[0]
+
+    //         console.log(userId)
+    //         console.log(currDocument[0])
+    //         // console.log(projectIndex)
+    //         console.log(id)
+                                            
+    //         const imageInfo = {
+    //             uniqueString // Store the unique string
+    //             // Other image-related data can be added here
+    //         };
+    
+    //             // adding img to the database 
+    //             await database.updateDocument(
+    //                 config.appwriteDatabaseID,
+    //                 config.appwriteCollectionID,
+    //                 recentProjectDocId.$id,
+    //                 {
+                        
+    //                     test_img: imageInfo
+    //                 }
+    
+    //             )
+    
+    
+    //             const store = await storage.createFile(
+    //                 config.appwriteImgBucketId,
+    //                 uniqueString,
+    //                 file
+    //             );
+    //             if(store){
+    //                 console.log("Image storage workign successfully")
+    //             }else{
+    //                 console.log("Image storage not working")
+    //             }
+    //             return store
+    //         }      
+    //     catch (error) {
+    //         console.log(error)
+    //     }                                 
+
+    // }
+
     
 
     async createImg(imgFile, projectIndex){     
