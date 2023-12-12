@@ -12,6 +12,9 @@
         "dest": "/"
       }
     ],
+    "rewrites":[
+        { "source": "/(.*)", "destination": "/" }
+    ],
     "env": {
       "NODE_ENV": "production",
       "API_URL": "https://grad-path-2-0.vercel.app"
