@@ -14,12 +14,12 @@
     ],
     "env": {
       "NODE_ENV": "production",
-      "API_URL": "https://grad-path-2-0-ayushparui.vercel.app"
+      "API_URL": "https://grad-path-2-0.vercel.app"
     },
     "build": {
       "env": {
         "NODE_ENV": "production",
-        "API_URL": "https://grad-path-2-0-ayushparui.vercel.app"
+        "API_URL": "https://grad-path-2-0.vercel.app"
       }
     }
   }
