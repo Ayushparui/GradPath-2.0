@@ -72,7 +72,7 @@ const Signup = () => {
                 <div className={styles.Form__class}>
                     <div className={styles.Signup__header}>
                         <h1>Create an account</h1>
-                        <p className={styles.Signup__header__p}>It's totally free</p>
+                        <p className={styles.Signup__header__p}>Its totally free</p>
                     </div>
                     <div className={styles.Signup__auth}>
                         <button onClick={Google} className={styles.google}>

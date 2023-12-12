@@ -13,7 +13,7 @@ const Nav = () => {
         <nav className={styles.nav}>
             <div className={styles.nav_main}>
                 <div className={styles.nav__logo}>
-                    <h1>Hello I'm Logo</h1>
+                    <h1>Hello Im Logo</h1>
                 </div>
                 <div className={styles.nav__links}>
                     <ul>
