@@ -43,7 +43,7 @@ export class authService{
     }
 
     google(){
-        let promise = account.createOAuth2Session('google', 'http://localhost:3000/project-hub', 'http://localhost:3000/signup')
+        let promise = account.createOAuth2Session('google', 'https://grad-path-2-0.vercel.app/project-hub', 'https://grad-path-2-0.vercel.app/signup')
         promise.then((response) => {
             console.log(response)
         }, (error) => {
@@ -51,7 +51,7 @@ export class authService{
         })
     }
     github(){
-        let promise = account.createOAuth2Session('github', 'http://localhost:3000/project-hub', 'http://localhost:3000/signup')
+        let promise = account.createOAuth2Session('github', 'https://grad-path-2-0.vercel.app/project-hub', 'https://grad-path-2-0.vercel.app/signup')
         promise.then((response) => {
             console.log(response)
         }, (error) => {
@@ -91,7 +91,7 @@ export class authService{
 
     async forgotPassword(email){
         try {
-            const forgotPassword = await account.createRecovery(email, 'http://localhost:3000/update-password')
+            const forgotPassword = await account.createRecovery(email, 'https://grad-path-2-0.vercel.app/update-password')
             return forgotPassword
         } catch (error) {
             console.log(error)
