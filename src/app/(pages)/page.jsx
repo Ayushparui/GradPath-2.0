@@ -9,6 +9,7 @@ import logo from "../../../public/Vector.svg"
 export default function Home() {
   return (
     <>
+    
       <h1 className={styles.logo}>
         <Image
           src={logo}

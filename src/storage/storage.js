@@ -101,7 +101,7 @@ export class storageService{
                         config.appwriteCollectionID,
                         recentProjectDocId.$id,
                         {
-                            img_link: uniqueString
+                            test_img: [uniqueString]
                         }
         
                     )
@@ -149,7 +149,7 @@ export class storageService{
 
 
             // adding UML to the database 
-            await database.updateDocument(
+            await database.createDocument(
                 config.appwriteDatabaseID,
                 config.appwriteCollectionID,
                 recentProjectDocId.$id,
