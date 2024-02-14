@@ -1,4 +1,4 @@
-import { Client, Databases, Account, ID } from "appwrite";
+import { Client, Databases, Account, ID, Storage } from "appwrite";
 import config from "../conf/config";
 import authServices from "@/authentication/auth";
 
@@ -7,6 +7,8 @@ const client = new Client();
 const databases = new Databases(client);
 
 const account = new Account(client);
+
+const storage = new Storage(client);
 
 client
     .setEndpoint(config.appwriteURL) // Your API Endpoint
@@ -50,6 +52,22 @@ export class database{
         }
     }
 
+    // Dashboard Code for listing all the projects
+
+    async listAllDocument(){
+        try {
+            const listAllData = await databases.listDocuments(config.appwriteDatabaseID, config.appwriteCollectionID)
+            const images = await storage.listFiles(config.appwriteImgBucketId)
+            console.log(listAllData.documents)
+            console.log(images.files)
+            return {
+                listAllData: listAllData.documents,
+                images: images.files
+            }
+        } catch (error) {
+            console.log(error)
+        }
+    }
 
     // Store Code
 

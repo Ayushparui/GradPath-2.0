@@ -1,7 +1,13 @@
+import ProjectHubs from '@/components/ProjectHub/ProjectHub'
+
 const ProjectHub = () => {
-    return(
+
+
+
+
+    return (
         <>
-            <h1>Project Hub</h1>
+           <ProjectHubs/>
         </>
     )
 }
