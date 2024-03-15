@@ -1,9 +1,11 @@
 import Test from "@/components/Test/Test"
- export default function UserProjects({params}){
+const UserProjects = ({params}) =>{
 
     const {id} = params
     return (
        <Test id={id}/>
     )
 }
+
+export default UserProjects
 
