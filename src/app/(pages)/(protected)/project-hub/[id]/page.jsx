@@ -1,12 +1,9 @@
- "use client"
+import Test from "@/components/Test/Test"
  export default function UserProjects({params}){
 
- 
+    const {id} = params
     return (
-        <div>
-            <h1>Projects {params.id}</h1>
-            <p>Projects will be displayed here.</p>
-        </div>
+       <Test id={id}/>
     )
 }
 
