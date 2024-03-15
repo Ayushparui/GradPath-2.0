@@ -38,7 +38,7 @@ const ProjectHubs = () => {
                     <div key={item.$id} className={styles.card}>
                         <div className={styles.cardContent}>
                             <div className={styles.proImg}>
-                                <img src={`https://cloud.appwrite.io/v1/storage/buckets/${config.appwriteBucketId}/files/${item.UML_file_ID}/view?project=${config.appwriteProjectID}&mode=admin`} alt="Image" className={styles.proImage} />
+                                <img src={`https://cloud.appwrite.io/v1/storage/buckets/${config.appwriteBucketId}/files/${item.UML_file_ID}/view?project=${config.appwriteProjectID}&mode=any`} alt="Image" className={styles.proImage} />
                             </div>
                             <div className={styles.proDetails}>
                                 <div className={styles.proName}>{item.name}</div>
