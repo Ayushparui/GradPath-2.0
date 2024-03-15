@@ -1,4 +1,4 @@
-export default function UserProjects({params}){
+ function UserProjects({params}){
     return (
         <div>
             <h1>Projects</h1>
@@ -6,3 +6,5 @@ export default function UserProjects({params}){
         </div>
     )
 }
+
+export default UserProjects;
