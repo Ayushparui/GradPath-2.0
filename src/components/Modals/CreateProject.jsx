@@ -341,10 +341,13 @@ const CreateProjectModal = () => {
                                 <p>No Image Available</p>
                             )}
                             <p>Code Link: {project.Github_Link}</p>
-                            <button onClick={() => toggleUmlModal(index)}>Add Uml</button>
-                            <button onClick={() => toggleCodeLink(index)}>Github/Code Link</button>
-                            <button onClick={() => toggleImgLink(index)}>Images/Videos</button>
-                            <button onClick={() => toggleDeployLink(index)}>Deployment Link</button>
+                            <div className={styles.allBtns}>
+
+                            <button className={styles.adm} onClick={() => toggleUmlModal(index)}>Add Uml</button>
+                            <button className={styles.adm} onClick={() => toggleCodeLink(index)}>Github/Code Link</button>
+                            <button className={styles.adm} onClick={() => toggleImgLink(index)}>Images/Videos</button>
+                            <button className={styles.adm} onClick={() => toggleDeployLink(index)}>Deployment Link</button>
+                            </div>
                         </div>
                     </div>
                 ))

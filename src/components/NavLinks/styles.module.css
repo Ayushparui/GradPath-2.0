@@ -1,7 +1,7 @@
 .navlinks{
     display: flex;
     flex-direction: column;
-    border: 1px solid black;
+    border: 1px solid rgb(221, 221, 221);
     margin-top: 10px;
 }
 .navlinks nav ul{

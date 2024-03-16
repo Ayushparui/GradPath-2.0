@@ -119,15 +119,14 @@ const MyProject = () => {
 
 
 
-            <h1>My project </h1>
+            <h1 className={styles.myPr}>My project </h1>
             {Array.isArray(useData) && useData.length > 0 ? (
                 useData.map((project, index) => (
                         <div key={index}>
                         <div className={styles.content}>
                             <h2>Name: {project.name}</h2>
                             <p>Description: {project.description}</p>
-                            <p>Document Id: {project.$id}</p>
-                            <p>Uml: {project.UML_file_ID}</p>
+                       
                             
                             {imgSrc[index] ? (
                             <img src={imgSrc[index].href} alt={`Image ${index}`} className={styles.image} />
@@ -135,8 +134,11 @@ const MyProject = () => {
                             <p>No Image Available</p>
                         )}
                         
-                            <button onClick={() => EditingModal(index)}>Edit</button>
-                            <button onClick={() => DeleteDoc(project.$id)} >Delete</button>
+                            <div className={styles.allBtn}>
+
+                            <button className={styles.ed} onClick={() => EditingModal(index)}>Edit</button>
+                            <button className={styles.de} onClick={() => DeleteDoc(project.$id)} >Delete</button>
+                            </div>
                            
                         </div>
                     </div>
