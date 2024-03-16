@@ -7,13 +7,22 @@ import Dashboard from "@/../../public/dashboard.png"
 import Network from "@/../../public/network.png"
 import Create from "@/../../public/tab.png"
 import Image from "next/image"
+import logo from "../../../public/Vector.svg"
 
 const Nav = () => {
     return (
         <nav className={styles.nav}>
             <div className={styles.nav_main}>
                 <div className={styles.nav__logo}>
-                    <h1>Hello Im Logo</h1>
+                <h1 className={styles.logo}>
+        <Image
+          src={logo}
+          alt="Picture of the author"
+          width={30}
+          height={30}
+          style={{ objectFit: "contain" }}
+        />
+      </h1>
                 </div>
                 <div className={styles.nav__links}>
                     <ul>
@@ -44,16 +53,7 @@ const Nav = () => {
                 </div>
             </div>
 
-            {/* <h1>Hello From Nav</h1>
-            <Link href={`/dashboard/my-projects`}>My Projects</Link>
-        <br /> 
-        <Link href={`/dashboard/collections`}>Collections</Link> 
-        <br />
-        <Link href={`/project-hub`}>Projects Hub</Link>
-        <br />
-        <Link href={`/create-project`}>Create Projects</Link>
-        <Logout/>
-        <Profile /> */}
+          
         </nav>
     )
 }

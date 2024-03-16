@@ -3,9 +3,11 @@ import { useEffect, useState } from "react"
 import datab from "@/database/db"
 import styles from "./styles.module.css"
 import config from "@/conf/config"
+
 import Link from "next/link"
 
 const ProjectHubs = () => {
+
 
 
 
@@ -32,6 +34,7 @@ const ProjectHubs = () => {
 
     useEffect(() => {
         fetchData(); // Initial data fetch
+ 
     }, []);
 
     const openProjectModal = (project) => {

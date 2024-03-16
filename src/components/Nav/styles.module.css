@@ -58,3 +58,19 @@
     position: absolute
 
 }
+
+.logo {
+    position: absolute;
+    top: 10px;
+    left: 15px;
+    animation: rotate 4s linear infinite; /* Add a continuous rotation animation */
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg); /* Start with no rotation */
+    }
+    to {
+        transform: rotate(360deg); /* End with a full 360-degree rotation */
+    }
+}
