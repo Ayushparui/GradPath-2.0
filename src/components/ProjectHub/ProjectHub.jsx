@@ -39,6 +39,7 @@ const ProjectHubs = () => {
 
     const openProjectModal = (project) => {
         setSelectedProject(project);
+
     };
 
     const closeProjectModal = () => {
@@ -78,10 +79,14 @@ const ProjectHubs = () => {
                 <div className={styles.modal}>
                         <span className={styles.closeButton} onClick={closeProjectModal}>X</span>
                     <div className={styles.modalContent}>
-                        <h2>{selectedProject.name}</h2>
-                        <p>{selectedProject.description}</p>
+                        <h2>Name: {selectedProject.name}</h2>
+                        
+                        
                         <img src={`https://cloud.appwrite.io/v1/storage/buckets/${config.appwriteBucketId}/files/${selectedProject.UML_file_ID}/view?project=${config.appwriteProjectID}&mode=any`} alt="Project" className={styles.modalImage} />
                         {/* Additional project details can be displayed here */}
+                        <p>Description: {selectedProject.description}</p>
+                       
+                        <p>Github Link: {selectedProject.Github_Link}</p>
                     </div>
                     <div className={styles.comment}>
                         <input type="text" placeholder="Add your comment..." value={comment} onChange={handleCommentChange}></input>
