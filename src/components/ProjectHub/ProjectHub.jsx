@@ -63,10 +63,10 @@ const ProjectHubs = () => {
                                 <img src={`https://cloud.appwrite.io/v1/storage/buckets/${config.appwriteBucketId}/files/${item.UML_file_ID}/view?project=${config.appwriteProjectID}&mode=any`} alt="Image" className={styles.proImage} />
                             </div>
                             <div className={styles.proDetails}>
-                                <div className={styles.proName}>{item.name}</div>
-                                <div className={styles.proDesc}>{item.description}</div>
+                                <div className={styles.proName}>Name: {item.name}</div>
+                                <div className={styles.proDesc}>Description: {item.description}</div>
                             </div>
-                            <button onClick={() => openProjectModal(item)}>View Project</button>
+                            <button className={styles.prM} onClick={() => openProjectModal(item)}>View Project</button>
                         </div>
                     </div>
                 ))
