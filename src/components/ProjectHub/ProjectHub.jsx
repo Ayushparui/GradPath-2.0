@@ -12,6 +12,9 @@ const ProjectHubs = () => {
 
     const [data, setData] = useState([])
     const [images, setImages] = useState([])
+    const [comment, setComment] = useState("");
+
+    const [selectedProject, setSelectedProject] = useState(null);
 
     const fetchData = async () => {
         try {
@@ -31,6 +34,22 @@ const ProjectHubs = () => {
         fetchData(); // Initial data fetch
     }, []);
 
+    const openProjectModal = (project) => {
+        setSelectedProject(project);
+    };
+
+    const closeProjectModal = () => {
+        setSelectedProject(null);
+    };
+
+    const submitComment = () => {
+        // Add logic to submit comment
+        console.log("Submitted comment:", comment);
+    };
+
+    const handleCommentChange = (event) => {
+        setComment(event.target.value);
+    };
     return (
         <>
             <div className={styles.main}>
@@ -44,7 +63,7 @@ const ProjectHubs = () => {
                                 <div className={styles.proName}>{item.name}</div>
                                 <div className={styles.proDesc}>{item.description}</div>
                             </div>
-                            <Link href={`/project-hub/${item.$id}`}>View Project</Link>
+                            <button onClick={() => openProjectModal(item)}>View Project</button>
                         </div>
                     </div>
                 ))
@@ -52,6 +71,21 @@ const ProjectHubs = () => {
 
 
             </div>
+            {selectedProject && (
+                <div className={styles.modal}>
+                        <span className={styles.closeButton} onClick={closeProjectModal}>X</span>
+                    <div className={styles.modalContent}>
+                        <h2>{selectedProject.name}</h2>
+                        <p>{selectedProject.description}</p>
+                        <img src={`https://cloud.appwrite.io/v1/storage/buckets/${config.appwriteBucketId}/files/${selectedProject.UML_file_ID}/view?project=${config.appwriteProjectID}&mode=any`} alt="Project" className={styles.modalImage} />
+                        {/* Additional project details can be displayed here */}
+                    </div>
+                    <div className={styles.comment}>
+                        <input type="text" placeholder="Add your comment..." value={comment} onChange={handleCommentChange}></input>
+                        <button onClick={submitComment}>Submit</button>
+                    </div>
+                </div>
+            )}
         </>
     )
 }

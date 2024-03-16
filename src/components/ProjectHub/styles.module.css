@@ -59,3 +59,47 @@
     align-content:flex-start;
     margin: 10px 0px 0px 10px;
 }
+
+.modal{
+    display: flex;
+    flex-direction: row;
+    
+    height: 80%;
+    width: 80%;
+    background-color: black;
+    position: fixed;
+    top: 10%;
+    color: white;
+}
+.closeButton{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    font-size: 40px;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+
+}
+.modalContent{
+    border: 2px solid white;
+    display: flex;
+    width: 70%;
+    flex-direction: column;
+    color: white;
+    overflow-y: auto;
+}
+.modalImage{
+    height: 300px;
+    width: 500px;
+    border: 2px solid white;
+    border-radius: 10px;
+    margin: 10px 0px 0px 10px;
+}
+.comment{
+    border: 2px solid white;
+    display: flex;
+    flex-direction: column-reverse;
+    /* align-content: flex-end; */
+    width: 30%;
+}
