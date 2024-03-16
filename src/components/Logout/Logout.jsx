@@ -1,6 +1,7 @@
 "use client";
 import authServices from "@/authentication/auth"
 import { useRouter } from "next/navigation";
+import styles from "./styles.module.css"
 
 
 
@@ -22,7 +23,7 @@ const Logout = () => {
 
     return(
         <>
-            <button onClick={logout}>Logout</button>
+            <button className={styles.logout} onClick={logout}>Logout</button>
         </>
     )
 }
